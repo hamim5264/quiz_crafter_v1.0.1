@@ -9,6 +9,7 @@ import 'package:quiz_crafter/view/auth/app_login_screen.dart';
 import 'package:quiz_crafter/view/user/category_screen.dart';
 import 'package:quiz_crafter/view/user/create_review_screen.dart';
 import 'package:quiz_crafter/view/user/edit_user_profile_screen.dart';
+import 'package:quiz_crafter/view/user/quiz_history_screen.dart';
 import 'package:quiz_crafter/view/user/review_list_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -182,6 +183,28 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                   ),
                   ListTile(
                     leading: Icon(
+                      Icons.history_outlined,
+                      color: AppTheme.secondaryColor,
+                      size: 24,
+                    ),
+                    title: Text(
+                      "Quiz History",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuizHistoryScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(
                       Icons.info_outline,
                       color: AppTheme.secondaryColor,
                       size: 24,
@@ -258,9 +281,25 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                 ),
                 backgroundColor: AppTheme.secondaryColor,
                 elevation: 0,
-                child: Icon(
-                  Icons.add_rounded,
-                  color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Rate",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                    Text(
+                      "Us",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
                 ),
                 onPressed: () {
                   Navigator.push(
